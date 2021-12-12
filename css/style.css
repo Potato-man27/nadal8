@@ -1,0 +1,138 @@
+:root {
+    --my-padding: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    color: #fff;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 1fr 1fr 1fr 0.5fr;
+    grid-template-areas:
+    "nav nav nav nav"
+    "content1 content2 content3 sidebar"
+    "main main main sidebar"
+    "footer footer footer sidebar"
+    ; 
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.header {
+    background-color: violet;
+    grid-area: header;
+    padding: var(--my-padding);
+
+}
+
+.header-container {
+    align-items: center;
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.menu {
+    align-items: center;
+    display: grid;
+    background-color: tomato;
+    grid-area: menu;
+    padding: var(--my-padding);
+}
+
+.hero {
+    align-items: center;
+    display: grid;
+    background-color: yellowgreen;
+    grid-area: hero;
+    padding: var(--my-padding);
+}
+
+.img {
+    align-items: center;
+    display: grid;
+    background-color: thistle;
+    grid-area: img;
+    padding: var(--my-padding);
+}
+
+.extra {
+    align-items: center;
+    display: grid;
+    background-color: sienna;
+    grid-area: extra;
+    padding: var(--my-padding);
+}
+
+.main {
+    align-items: center;
+    display: grid;
+    background-color: silver;
+    grid-area: main;
+    padding: var(--my-padding);
+}
+
+.ban {
+    background-color: royalblue;
+    grid-area: ban;
+    padding: var(--my-padding);
+}
+
+@media(max-width: 1024px){
+    .container{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr 3fr 1fr 1fr;
+        grid-template-areas:
+        "head head head head"
+        "hero hero hero hero"
+        "menu main main main"
+        "menu ban ban ban"
+        "menu extra extra img"
+        ;
+    }
+    .sidebar{
+        display: none;
+    }
+}
+
+    .sidebar {
+        display: none;
+    }
+
+@media (max-width: 480px){
+    .nav-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .sidebar {
+        display: block;
+    }
+
+    .content3 {
+        display: none;
+    }
+
+    .container {
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 2fr 1fr 1fr;
+        grid-template-areas: 
+        "head"
+        "hero"
+        "main"
+        "menu"
+        "extra"
+        "banner"
+        "img"
+        ;
+    }
+}
